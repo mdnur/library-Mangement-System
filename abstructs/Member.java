@@ -91,7 +91,7 @@ public abstract class Member extends Person {
 	}
 
 	public void setNoOfBookBorrowed(int noOfBookBorrowed) {
-		this.noOfBookBorrowed = noOfBookBorrowed;
+		this.noOfBookBorrowed += noOfBookBorrowed;
 	}
 
 	public int getNoOfBookReturn() {

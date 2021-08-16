@@ -486,7 +486,7 @@ public class Start {
 							System.out.print("Enter Issue Id: ");
 							int isID = sc.nextInt();
 							
-							lib.deleteissues(isID);
+							lib.deleteIssues(isID);
 							break;
 
 						case 5:

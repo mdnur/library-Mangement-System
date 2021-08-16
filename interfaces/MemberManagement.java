@@ -2,7 +2,7 @@ package interfaces;
 
 import abstructs.Member;
 
-public interface MemberMangement {
+public interface MemberManagement {
 	public void AddMember(Member member);
 
 	public void showAllMember();

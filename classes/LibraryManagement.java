@@ -5,10 +5,10 @@ import java.util.ArrayList;
 
 import abstructs.Book;
 import abstructs.Member;
-import interfaces.BookMangement;
-import interfaces.MemberMangement;
+import interfaces.BookManagement;
+import interfaces.MemberManagement;
 
-public class LibraryManagement implements BookMangement, MemberMangement {
+public class LibraryManagement implements BookManagement, MemberManagement {
 	private ArrayList<Member> members = new ArrayList<Member>();
 	private ArrayList<Book> books = new ArrayList<Book>();
 	private static SimpleDateFormat sdformat = new SimpleDateFormat("dd/MM/yyyy");
@@ -83,7 +83,7 @@ public class LibraryManagement implements BookMangement, MemberMangement {
 	public void AddBook(Book book) {
 		boolean bool = books.add(book);
 		if (bool) {
-			System.out.println("Member add successfully");
+			System.out.println("Book added successfully");
 		} else {
 			System.out.println("Something went wrong");
 		}

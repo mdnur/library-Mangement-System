@@ -35,7 +35,7 @@ public class Librarian extends UserAbstract implements IssueBookAble {
 	}
 
 	@Override
-	public void deleteissues(int issuesID) {
+	public void deleteIssues(int issuesID) {
 		for (BorrowBook issuesbook : issuesbooks) {
 			if (issuesbook.getIssuesID() == issuesID) {
 				issuesbooks.remove(issuesbook);

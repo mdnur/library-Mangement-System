@@ -10,7 +10,7 @@ public interface IssueBookAble {
 //	public void editIssues(BorrowBook issuesBook);
 	public BorrowBook searchIssues(int issuesID);
 
-	public void deleteissues(int issuesID);
+	public void deleteIssues(int issuesID);
 
 	public boolean returnBook(int issuesID, Date returnDate);
 }

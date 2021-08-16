@@ -2,7 +2,7 @@ package interfaces;
 
 import abstructs.Book;
 
-public interface BookMangement {
+public interface BookManagement {
 
 	public void AddBook(Book book);
 
