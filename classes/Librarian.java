@@ -8,7 +8,7 @@ import abstructs.Member;
 import abstructs.UserAbstract;
 import interfaces.IssueBookAble;
 
-public class Libarian extends UserAbstract implements IssueBookAble {
+public class Librarian extends UserAbstract implements IssueBookAble {
 	private ArrayList<BorrowBook> issuesbooks = new ArrayList<BorrowBook>();
 	private static SimpleDateFormat sdformat = new SimpleDateFormat("dd/MM/yyyy");
 	

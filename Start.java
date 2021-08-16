@@ -1,14 +1,13 @@
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.Scanner;
 
 import abstructs.Book;
 import abstructs.Member;
 import classes.BorrowBook;
 import classes.Faculty;
-import classes.Libarian;
+import classes.Librarian;
 import classes.LibraryManagement;
 import classes.Student;
 import classes.book.FictionBook;
@@ -21,7 +20,8 @@ public class Start {
 	public static void main(String[] args) throws ParseException {
 
 		LibraryManagement lM = new LibraryManagement();
-		Libarian libarian = new Libarian();
+
+
 		Book book1 = new TextBook(1, "0135166306", "Core Java Volume I--Fundamentals", "Cay S. Horstmann", 50);
 
 		Book book3 = new TextBook(2, "3689656869", "Java: A Beginner’s Guide", "Herbert Schildt", 90);
@@ -82,7 +82,7 @@ public class Start {
 		}
 		// lM.showAllMember();
 
-		Libarian lib = new Libarian();
+		Librarian lib = new Librarian();
 
 		BorrowBook is1 = new BorrowBook(1, "for 10 days", sBook1, sdformat.parse("21/03/2002"), sdformat.parse("10/25/2021"),
 				member1);
