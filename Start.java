@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 import abstructs.Book;
 import abstructs.Member;
+import classes.AboutUs;
 import classes.BorrowBook;
 import classes.Faculty;
 import classes.Librarian;
@@ -97,7 +98,8 @@ public class Start {
 			System.out.println("	2. Faculty Management");
 			System.out.println("	3. Book Management");
 			System.out.println("	4. Borrow Book ");
-			System.out.println("	5. Exit the Application\n");
+			System.out.println("	5. About Us");
+			System.out.println("	6. Exit the Application\n");
 			System.out.print("What do you want to do? : ");
 
 			int first = sc.nextInt();
@@ -500,8 +502,12 @@ public class Start {
 							break;
 					}
 					break;
-
 				case 5:
+					System.out.println("you have selected about us");
+
+					new AboutUs();
+					break;
+				case 6:
 
 					System.out.println("You have selected to exit the application");
 					System.out.println("Thank you for using Application");
