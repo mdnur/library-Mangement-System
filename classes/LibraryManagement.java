@@ -49,7 +49,7 @@ public class LibraryManagement implements BookMangement, MemberMangement {
 			if (member.getId() == id) {
 				return true;
 			}else {
-				System.out.println("Memeber not found");
+				System.out.println("Member not found");
 				return false;
 			}
 		}
@@ -63,7 +63,7 @@ public class LibraryManagement implements BookMangement, MemberMangement {
 				members.remove(member);
 				System.out.println("last deleted member id is : " + id);
 			}else {
-				System.out.println("Memeber not found");
+				System.out.println("Member not found");
 			}
 		}
 
@@ -83,7 +83,7 @@ public class LibraryManagement implements BookMangement, MemberMangement {
 	public void AddBook(Book book) {
 		boolean bool = books.add(book);
 		if (bool) {
-			System.out.println("Memeber add succesfully");
+			System.out.println("Member add successfully");
 		} else {
 			System.out.println("Something went wrong");
 		}

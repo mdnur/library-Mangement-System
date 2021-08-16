@@ -41,7 +41,6 @@ public class Start {
 		lM.AddBook(book4);
 		lM.AddBook(book5);
 		lM.AddBook(sBook1);
-		lM.showAllBook();
 
 		Student s1 = new Student(1, 1, sdformat.parse("12/12/2020"), true, "CSE", "Mohammad Nur", "mdnur701@gmail.com",
 				"0185990333", sdformat.parse("21/03/2002"));
@@ -62,25 +61,24 @@ public class Start {
 		lM.AddMember(s5);
 		Member member1 = lM.searchMember(2);
 
-		if (member1 != null) {
-			System.out.println("Member id : " + member1.getId());
-			System.out.println("Member Name : " + member1.getName());
-			System.out.println("Member Email : " + member1.getEmail());
-			System.out.println("Member Mobile : " + member1.getMobile());
-			System.out.println("Member Date of birth : " + member1.getDob());
-			System.out.println("Member Type : " + member1.getType());
-			System.out.println("Member Date of Join : " + member1.getDateOfjoin());
-			// System.out.println("Member Status : " + (member.isMemberStatus() == true ?
-			// "true" : "False");
-			System.out.println("Member Status : " + member1.isMemberStatus());
-			if (member1.getFine() > 0) {
-				System.out.println("Member fine : " + member1.getFine());
-			}
+		// if (member1 != null) {
+		// 	System.out.println("Member id : " + member1.getId());
+		// 	System.out.println("Member Name : " + member1.getName());
+		// 	System.out.println("Member Email : " + member1.getEmail());
+		// 	System.out.println("Member Mobile : " + member1.getMobile());
+		// 	System.out.println("Member Date of birth : " + member1.getDob());
+		// 	System.out.println("Member Type : " + member1.getType());
+		// 	System.out.println("Member Date of Join : " + member1.getDateOfjoin());
+		// 	// System.out.println("Member Status : " + (member.isMemberStatus() == true ?
+		// 	// "true" : "False");
+		// 	System.out.println("Member Status : " + member1.isMemberStatus());
+		// 	if (member1.getFine() > 0) {
+		// 		System.out.println("Member fine : " + member1.getFine());
+		// 	}
 
-			System.out.println("Member No Of Book Issued : " + member1.getNoOfBookIssued());
-			System.out.println("");
-		}
-		// lM.showAllMember();
+		// 	System.out.println("Member No Of Book Issued : " + member1.getNoOfBookIssued());
+		// 	System.out.println("");
+		// }
 
 		Librarian lib = new Librarian();
 
@@ -428,6 +426,7 @@ public class Start {
 								bb.setIssuesID(issuesID);
 								bb.setIssuedDiscription(issuedDescription);
 								bb.setIssuedMember(lM.searchMember(issuesMemberID));
+								// lM.searchMember(issuesMemberID).setNoOfBookBorrowed(noOfBookBorrowed);
 								
 								bb.setIssuesBook(lM.searchBook(issuedBookID));
 								bb.setIssueDate(sdformat.parse(issueDate));
