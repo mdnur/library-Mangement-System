@@ -87,11 +87,9 @@ public class Start {
 		BorrowBook is1 = new BorrowBook(1, "for 10 days", sBook1, sdformat.parse("21/03/2002"), sdformat.parse("10/25/2021"),
 				member1);
 		
-		System.out.flush();  
 
-		// copy from sir
 
-		System.out.println("Welcome to Sample Library Mangemnet Application");
+		System.out.println("Welcome to Sample Library Management Application");
 		boolean choice = true;
 		Scanner sc = new Scanner(System.in);
 
@@ -207,7 +205,7 @@ public class Start {
 							System.out.print("Enter Member Name: ");
 							String name = sc.next();
 
-							System.out.print("Enter Member Date of Birth : ");
+							System.out.print("Enter Member Date of Birth (dd/mm/yyy): ");
 							String dob = sc.next();
 
 							System.out.print("Enter Member Mobile no: ");
@@ -413,8 +411,8 @@ public class Start {
 							System.out.print("Enter issues ID : ");
 							int issuesID = sc.nextInt();
 							
-							System.out.print("Enter issued Discription : ");
-							String issuedDiscription = sc.next();
+							System.out.print("Enter issued Description : ");
+							String issuedDescription = sc.next();
 							
 							System.out.print("Enter issued Member ID : ");
 							int issuesMemberID = sc.nextInt();
@@ -428,7 +426,7 @@ public class Start {
 							if (lib.hasMemberAndBookIdThere(issuesMemberID, issuedBookID)) {
 								BorrowBook bb = new BorrowBook();
 								bb.setIssuesID(issuesID);
-								bb.setIssuedDiscription(issuedDiscription);
+								bb.setIssuedDiscription(issuedDescription);
 								bb.setIssuedMember(lM.searchMember(issuesMemberID));
 								
 								bb.setIssuesBook(lM.searchBook(issuedBookID));
@@ -454,7 +452,7 @@ public class Start {
 								System.out.println("--From the search--");
 								System.out.println("Borrow Book Issue Id : "+getByID.getIssuesID());
 								System.out.println("Borrow Book issues Renew Date : "+getByID.getIssuesRenew());
-								System.out.println("Borrow Book issuedDiscription  : "+getByID.getIssuedDiscription());
+								System.out.println("Borrow Book issued Description  : "+getByID.getIssuedDiscription());
 								System.out.println("Borrow Book issuesMemberID  : "+getByID.getIssuedMember().getId());
 								System.out.println("Borrow Book issueDate : "+getByID.getIssueDate());
 								System.out.println("Borrow Book issuedExpiryDate  : "+getByID.getIssuedExpiryDate());
