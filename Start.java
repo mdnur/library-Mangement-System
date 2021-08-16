@@ -88,7 +88,8 @@ public class Start {
 		
 
 
-		System.out.println("Welcome to Sample Library Management Application");
+		System.out.println("\t\t\t Welcome to Sample Library Management Application");
+		System.out.println("\t Developed By Mohammad Nur, Sirajus Salehin,Md. Reasat Ahmed, Mir Ashiqul Haque");
 		boolean choice = true;
 		Scanner sc = new Scanner(System.in);
 
