@@ -33,7 +33,8 @@ public class LibraryManagement implements BookManagement, MemberManagement {
 			System.out.println("Member Date of birth : " + sdformat.format(member.getDob()));
 			System.out.println("Member Type : " + member.getType());
 			System.out.println("Member Date of Join : " + sdformat.format(member.getDateOfjoin()));
-//			System.out.println("Member Status : " + (member.isMemberStatus() == true ? "true" : "False");
+			// System.out.println("Member Status : " + (member.isMemberStatus() == true ?
+			// "true" : "False");
 			System.out.println("Member Status : " + member.isMemberStatus());
 			if (member.getFine() > 0) {
 				System.out.println("Member fine : " + member.getFine());
@@ -44,11 +45,12 @@ public class LibraryManagement implements BookManagement, MemberManagement {
 		}
 
 	}
+
 	public boolean getMember(int id) {
 		for (Member member : members) {
 			if (member.getId() == id) {
 				return true;
-			}else {
+			} else {
 				System.out.println("Member not found");
 				return false;
 			}
@@ -62,12 +64,13 @@ public class LibraryManagement implements BookManagement, MemberManagement {
 			if (member.getId() == id) {
 				members.remove(member);
 				System.out.println("last deleted member id is : " + id);
-			}else {
+			} else {
 				System.out.println("Member not found");
 			}
 		}
 
 	}
+
 	@Override
 	public Member searchMember(int id) {
 		for (Member member : members) {
@@ -78,7 +81,7 @@ public class LibraryManagement implements BookManagement, MemberManagement {
 		return null;
 
 	}
-	
+
 	@Override
 	public void AddBook(Book book) {
 		boolean bool = books.add(book);
@@ -118,7 +121,7 @@ public class LibraryManagement implements BookManagement, MemberManagement {
 		for (Book book : books) {
 			if (book.getId() == id) {
 				return true;
-			}else {
+			} else {
 				System.out.println("Book not found");
 				return false;
 			}
@@ -134,6 +137,33 @@ public class LibraryManagement implements BookManagement, MemberManagement {
 			}
 		}
 		return null;
+	}
+
+	public void showMember(Member member) {
+		System.out.println("Member id : " + member.getId());
+		System.out.println("Member Name : " + member.getName());
+		System.out.println("Member Email : " + member.getEmail());
+		System.out.println("Member Mobile : " + member.getMobile());
+		System.out.println("Member Date of birth : " + sdformat.format(member.getDob()));
+		System.out.println("Member Type : " + member.getType());
+		System.out.println("Member Date of Join : " + sdformat.format(member.getDateOfjoin()));
+		// System.out.println("Member Status : " + (member.isMemberStatus() == true ?
+		// "true" : "False");
+		System.out.println("Member Status : " + member.isMemberStatus());
+		if (member.getFine() > 0) {
+			System.out.println("Member fine : " + member.getFine());
+		}
+
+		System.out.println("Member No Of Book Issued : " + member.getNoOfBookIssued());
+		System.out.println("");
+	}
+	public void showBook(Book book){
+		System.out.println("Book id : " + book.getId());
+			System.out.println("Book Isbn : " + book.getIsbn());
+			System.out.println("Book Author Name : " + book.getAuthorName());
+			System.out.println("Book Title : " + book.getBookTitle());
+			System.out.println("Book Available Quantity : " + book.getAvailableQuantity());
+			System.out.println("");
 	}
 
 }

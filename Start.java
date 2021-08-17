@@ -17,11 +17,10 @@ import classes.book.TextBook;
 
 public class Start {
 	private static SimpleDateFormat sdformat = new SimpleDateFormat("dd/MM/yyyy");
-  
+
 	public static void main(String[] args) throws ParseException {
 
 		LibraryManagement lM = new LibraryManagement();
-
 
 		Book book1 = new TextBook(1, "0135166306", "Core Java Volume I--Fundamentals", "Cay S. Horstmann", 50);
 
@@ -63,30 +62,29 @@ public class Start {
 		Member member1 = lM.searchMember(2);
 
 		// if (member1 != null) {
-		// 	System.out.println("Member id : " + member1.getId());
-		// 	System.out.println("Member Name : " + member1.getName());
-		// 	System.out.println("Member Email : " + member1.getEmail());
-		// 	System.out.println("Member Mobile : " + member1.getMobile());
-		// 	System.out.println("Member Date of birth : " + member1.getDob());
-		// 	System.out.println("Member Type : " + member1.getType());
-		// 	System.out.println("Member Date of Join : " + member1.getDateOfjoin());
-		// 	// System.out.println("Member Status : " + (member.isMemberStatus() == true ?
-		// 	// "true" : "False");
-		// 	System.out.println("Member Status : " + member1.isMemberStatus());
-		// 	if (member1.getFine() > 0) {
-		// 		System.out.println("Member fine : " + member1.getFine());
-		// 	}
+		// System.out.println("Member id : " + member1.getId());
+		// System.out.println("Member Name : " + member1.getName());
+		// System.out.println("Member Email : " + member1.getEmail());
+		// System.out.println("Member Mobile : " + member1.getMobile());
+		// System.out.println("Member Date of birth : " + member1.getDob());
+		// System.out.println("Member Type : " + member1.getType());
+		// System.out.println("Member Date of Join : " + member1.getDateOfjoin());
+		// System.out.println("Member Status : " + (member.isMemberStatus() == true ?
+		// "true" : "False");
+		// System.out.println("Member Status : " + member1.isMemberStatus());
+		// if (member1.getFine() > 0) {
+		// System.out.println("Member fine : " + member1.getFine());
+		// }
 
-		// 	System.out.println("Member No Of Book Issued : " + member1.getNoOfBookIssued());
-		// 	System.out.println("");
+		// System.out.println("Member No Of Book Issued : " +
+		// member1.getNoOfBookIssued());
+		// System.out.println("");
 		// }
 
 		Librarian lib = new Librarian();
 
-		BorrowBook is1 = new BorrowBook(1, "for 10 days", sBook1, sdformat.parse("21/03/2002"), sdformat.parse("10/25/2021"),
-				member1);
-		
-
+		BorrowBook is1 = new BorrowBook(1, "for 10 days", sBook1, sdformat.parse("21/03/2002"),
+				sdformat.parse("10/25/2021"), member1);
 
 		System.out.println("\t\t\t Welcome to Sample Library Management Application");
 		System.out.println("\t Developed By Mohammad Nur, Sirajus Salehin,Md. Reasat Ahmed, Mir Ashiqul Haque");
@@ -108,12 +106,13 @@ public class Start {
 			switch (first) {
 				case 1:
 
-					System.out.println("You have selected Employee Management");
+					System.out.println("You have selected Member Management");
 					System.out.println("Here are Some Options for You: \n");
 					System.out.println("	1. Create New Student Profile");
 					System.out.println("	2. Remove Existing Student");
-					System.out.println("	3. See all Student Member");
-					System.out.println("	4. Go Back\n");
+					System.out.println("	3. Search Student");
+					System.out.println("	4. See all Student Member");
+					System.out.println("	5. Go Back\n");
 					System.out.print("What do you want to do? : ");
 					int second1 = sc.nextInt();
 
@@ -158,21 +157,34 @@ public class Start {
 
 						case 2:
 
-							System.out.println("You have Selected to remove an existing Employee");
-							System.out.print("Enter Employee Id: ");
+							System.out.println("You have Selected to remove an existing Student");
+							System.out.print("Enter Member Id: ");
 							lM.removeMember(sc.nextInt());
 
 							break;
-
 						case 3:
 
-							System.out.println("You have Selected to see all Employees");
+							System.out.println("You have Selected to Search a Student");
+							System.out.print("Enter Member Id: ");
+							int searchId = sc.nextInt();
+							Member searchData = lM.searchMember(searchId);
+							if (searchData != null) {
+								lM.showMember(searchData);
+							} else {
+								System.out.println("Student not found");
+							}
+
+							break;
+
+						case 4:
+
+							System.out.println("You have Selected to see all Members");
 
 							lM.showAllMember();
 
 							break;
 
-						case 4:
+						case 5:
 
 							System.out.println("You have Selected to Go Back");
 							break;
@@ -192,8 +204,9 @@ public class Start {
 					System.out.println("Here are Some Options for You: \n");
 					System.out.println("	1. Create New Faculty Profile");
 					System.out.println("	2. Remove Existing Faculty");
-					System.out.println("	3. See all Faculty Profile");
-					System.out.println("	4. Go Back\n");
+					System.out.println("	3. Search Faculty");
+					System.out.println("	4. See all Faculty Profile");
+					System.out.println("	5. Go Back\n");
 					System.out.print("What do you want to do? : ");
 					int second2 = sc.nextInt();
 
@@ -243,13 +256,24 @@ public class Start {
 							int nid2 = sc.nextInt();
 							lM.removeMember(nid2);
 							break;
-
 						case 3:
+
+							System.out.println("You have Selected to Search a Faculty");
+							System.out.print("Enter Faculty Id: ");
+							int searchId = sc.nextInt();
+							Member searchData = lM.searchMember(searchId);
+							if (searchData != null) {
+								lM.showMember(searchData);
+							} else {
+								System.out.println("Student not found");
+							}
+
+						case 4:
 
 							lM.showAllMember();
 							break;
 
-						case 4:
+						case 5:
 
 							System.out.println("Going Back . . .");
 							break;
@@ -269,8 +293,9 @@ public class Start {
 					System.out.println("Here are Some Options for You: \n");
 					System.out.println("	1. Add Book");
 					System.out.println("	2. Remove Existing Book");
-					System.out.println("	3. See all Book");
-					System.out.println("	4. Go Back\n");
+					System.out.println("	3. Search Book");
+					System.out.println("	4. See all Book");
+					System.out.println("	5. Go Back\n");
 					System.out.print("What do you want to do? : ");
 					int second3 = sc.nextInt();
 
@@ -278,7 +303,7 @@ public class Start {
 						case 1:
 							System.out.println("There are 3 types of Book: ");
 							System.out.println("	1. Text Book");
-							System.out.println("	2. Stroy Book");
+							System.out.println("	2. Story Book");
 							System.out.println("	3. Fiction Book");
 							System.out.println("	4. Go Back\n");
 							System.out.print("What do you want to do? : ");
@@ -376,13 +401,26 @@ public class Start {
 							lM.removeBook(id);
 
 							break;
-
 						case 3:
+
+							System.out.println("You have Selected to Search a Book");
+							System.out.print("Enter book Id: ");
+							int searchId = sc.nextInt();
+							Book searchData = lM.searchBook(searchId);
+							if (searchData != null) {
+								lM.showBook(searchData);
+							} else {
+								System.out.println("Book not found");
+							}
+
+							break;
+
+						case 4:
 
 							lM.showAllBook();
 							break;
 
-						case 4:
+						case 5:
 
 							System.out.println("Going Back . . .");
 							break;
@@ -408,64 +446,62 @@ public class Start {
 
 					switch (second4) {
 						case 1:
-						
+
 							System.out.print("Enter issues ID : ");
 							int issuesID = sc.nextInt();
-							
+
 							System.out.print("Enter issued Description : ");
 							String issuedDescription = sc.next();
-							
+
 							System.out.print("Enter issued Member ID : ");
 							int issuesMemberID = sc.nextInt();
-							
+
 							System.out.print("Enter issued Book ID : ");
 							int issuedBookID = sc.nextInt();
-							
+
 							System.out.print("Enter issued Member ID : ");
 							String issueDate = sc.next();
-							
+
 							if (lib.hasMemberAndBookIdThere(issuesMemberID, issuedBookID)) {
 								BorrowBook bb = new BorrowBook();
 								bb.setIssuesID(issuesID);
 								bb.setIssuedDiscription(issuedDescription);
 								bb.setIssuedMember(lM.searchMember(issuesMemberID));
 								// lM.searchMember(issuesMemberID).setNoOfBookBorrowed(noOfBookBorrowed);
-								
+
 								bb.setIssuesBook(lM.searchBook(issuedBookID));
 								bb.setIssueDate(sdformat.parse(issueDate));
 								lib.addIssues(bb);
-								
-							}else {
+
+							} else {
 								System.out.println("Member ID or Book ID not found");
 							}
-							
-							
 
-							
 							break;
 
 						case 2:
 
 							System.out.print("Enter Issue Id: ");
 							int issueID = sc.nextInt();
-							
+
 							BorrowBook getByID = lib.searchIssues(issueID);
-							if (getByID !=null) {
+							if (getByID != null) {
 								System.out.println("--From the search--");
-								System.out.println("Borrow Book Issue Id : "+getByID.getIssuesID());
-								System.out.println("Borrow Book issues Renew Date : "+getByID.getIssuesRenew());
-								System.out.println("Borrow Book issued Description  : "+getByID.getIssuedDiscription());
-								System.out.println("Borrow Book issuesMemberID  : "+getByID.getIssuedMember().getId());
-								System.out.println("Borrow Book issueDate : "+getByID.getIssueDate());
-								System.out.println("Borrow Book issuedExpiryDate  : "+getByID.getIssuedExpiryDate());
-								System.out.println("Borrow Book Return Book status: "+getByID.isReturnBook());
-								System.out.println("Borrow Book Return Date  : "+getByID.getReturnDate());
-								System.out.println("Borrow Book issued Book ID   : "+getByID.getIssuesBook().getId());
-							}else{
+								System.out.println("Borrow Book Issue Id : " + getByID.getIssuesID());
+								System.out.println("Borrow Book issues Renew Date : " + getByID.getIssuesRenew());
+								System.out
+										.println("Borrow Book issued Description  : " + getByID.getIssuedDiscription());
+								System.out
+										.println("Borrow Book issuesMemberID  : " + getByID.getIssuedMember().getId());
+								System.out.println("Borrow Book issueDate : " + getByID.getIssueDate());
+								System.out.println("Borrow Book issuedExpiryDate  : " + getByID.getIssuedExpiryDate());
+								System.out.println("Borrow Book Return Book status: " + getByID.isReturnBook());
+								System.out.println("Borrow Book Return Date  : " + getByID.getReturnDate());
+								System.out.println("Borrow Book issued Book ID   : " + getByID.getIssuesBook().getId());
+							} else {
 								System.out.println("Issues Book id not found");
 							}
-							
-							
+
 							break;
 
 						case 3:
@@ -475,20 +511,19 @@ public class Start {
 
 							System.out.print("Enter Return date: ");
 							String returnDate = sc.next();
-							
+
 							boolean check = lib.returnBook(id, sdformat.parse(returnDate));
 							if (check) {
 								System.out.println("return book succesfully");
 							}
-							
-						
+
 							break;
 
 						case 4:
 
 							System.out.print("Enter Issue Id: ");
 							int isID = sc.nextInt();
-							
+
 							lib.deleteIssues(isID);
 							break;
 
