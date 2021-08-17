@@ -1,9 +1,16 @@
 package abstructs;
 
-public class UserAbstract extends Person {
+public abstract class UserAbstract extends Person {
 	private String username;
 	private String password;
 
+	public UserAbstract(){
+		
+	}
+	public UserAbstract(String username, String password){
+		this.username = username;
+		this.password = password;
+	}
 	public String getUsername() {
 		return username;
 	}

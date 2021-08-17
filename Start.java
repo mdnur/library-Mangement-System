@@ -514,7 +514,7 @@ public class Start {
 
 							boolean check = lib.returnBook(id, sdformat.parse(returnDate));
 							if (check) {
-								System.out.println("return book succesfully");
+								System.out.println("return book successfully");
 							}
 
 							break;
@@ -544,7 +544,7 @@ public class Start {
 					new AboutUs();
 					break;
 				case 6:
-
+					sc.close();
 					System.out.println("You have selected to exit the application");
 					System.out.println("Thank you for using Application");
 					choice = false;
