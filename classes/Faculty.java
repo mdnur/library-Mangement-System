@@ -10,12 +10,13 @@ public class Faculty extends Member {
 
 	public Faculty() {
 		super();
+		this.type ="faculty";
 	}
 
-	public Faculty(String position, int college_teacher_id, int id, String type, Date dateOfjoin,
+	public Faculty(String position, int college_teacher_id, int id, Date dateOfjoin,
 			boolean memberStatus, double fine, String department, String name, String email, String mobile,
 			Date dob) {
-		super(id, type, dateOfjoin, memberStatus, department, name, email, mobile, dob);
+		super(id, "faculty", dateOfjoin, memberStatus, department, name, email, mobile, dob);
 		this.position = position;
 		this.college_teacher_id = college_teacher_id;
 	}
