@@ -9,6 +9,7 @@ import classes.AboutUs;
 import classes.BorrowBook;
 import classes.Faculty;
 import classes.Librarian;
+import classes.Admin;
 import classes.LibraryManagement;
 import classes.Student;
 import classes.book.FictionBook;
@@ -21,6 +22,20 @@ public class Start {
 	public static void main(String[] args) throws ParseException {
 
 		LibraryManagement lM = new LibraryManagement();
+		Scanner sc = new Scanner(System.in);
+		Admin admin = new Admin("admin", "password");
+		System.out.print("Enter Admin User Name:");
+		String adminUser = sc.next();
+
+		System.out.print("Enter Admin User password: ");
+		String adminPass = sc.next();
+		if (admin.getUsername().equals(adminUser) && admin.getPassword().equals(adminPass)) {
+			System.out.println("You fucker");
+		} else {
+			System.out.println("Username or password are invalid");
+			sc.close();
+			return;
+		}
 
 		Book book1 = new TextBook(1, "0135166306", "Core Java Volume I--Fundamentals", "Cay S. Horstmann", 50);
 
@@ -89,7 +104,6 @@ public class Start {
 		System.out.println("\t\t\t Welcome to Sample Library Management Application");
 		System.out.println("\t Developed By Mohammad Nur, Sirajus Salehin,Md. Reasat Ahmed, Mir Ashiqul Haque");
 		boolean choice = true;
-		Scanner sc = new Scanner(System.in);
 
 		while (choice) {
 			System.out.println("Here are Some Options for You: \n");
