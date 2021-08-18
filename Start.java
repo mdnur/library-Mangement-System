@@ -1,4 +1,3 @@
-
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Scanner;
@@ -30,7 +29,7 @@ public class Start {
 		System.out.print("Enter Admin User password: ");
 		String adminPass = sc.next();
 		if (admin.getUsername().equals(adminUser) && admin.getPassword().equals(adminPass)) {
-			System.out.println("You fucker");
+			System.out.println("You granted access");
 		} else {
 			System.out.println("Username or password are invalid");
 			sc.close();
